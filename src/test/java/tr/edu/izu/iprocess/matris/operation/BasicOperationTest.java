@@ -32,5 +32,26 @@ public class BasicOperationTest extends TestCase {
 	public void testMatrisRowCountShouldBeThree() {
 		assertEquals(3, matris.getRowsCount());
 	}
+	
+	private void testNegativeIndices(int row, int col) {
+		try {
+			matris.getValue(row, col);
+		} catch (RuntimeException rex) {
+			assertEquals(IndexOutOfBoundsException.class.getName(), rex.getCause().getClass().getName());
+		}
+	}
+	
+	public void testNegativeRowIndiceShouldThrowRunTimeException() {
+		testNegativeIndices(-1, 0);
+	}
+	
+	public void testNegativeColIndiceShouldThrowRunTimeException() {
+		testNegativeIndices(0, -1);
+	}
+	
+	public void testNegativeIndicesShouldThrowRunTimeException() {
+		testNegativeIndices(-1, -1);
+	}
+	
 
 }
