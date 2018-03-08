@@ -61,7 +61,14 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 	}
 
 	public void transpose() throws Exception {
-		throw new NotImplementedMethodException();
+		if (matrisDatas == null)
+			throw new NotInitializedMatrixException();
+		for (int row = 0; row < this.getRowsCount(); row++)
+			for (int col = 0; col < this.getColumnsCount(); col++) {
+				Integer temp = matrisDatas[row][col];
+				matrisDatas[row][col] = matrisDatas[col][row];
+				matrisDatas[col][row] = temp;
+			}
 	}
 
 	public AbstractMatris<Integer> multiply(AbstractMatris<Integer> otherMatris) throws Exception {
