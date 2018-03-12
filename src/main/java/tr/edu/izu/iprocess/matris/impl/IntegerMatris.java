@@ -70,7 +70,31 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 	}
 
 	public AbstractMatris<Integer> multiply(AbstractMatris<Integer> otherMatris) throws Exception {
-		throw new NotImplementedMethodException();
+		if (getDatas() == null)
+			throw new NotInitializedMatrixException();
+		int aRows = getRowsCount();
+		int aColumns = getColumnsCount();
+		int bRows = otherMatris.getRowsCount();
+		int bColumns = otherMatris.getColumnsCount();
+
+		if (aColumns != bRows) {
+			throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
+		}
+
+		IntegerMatris newMatrix = new IntegerMatris(aRows, bColumns);
+
+		newMatrix.initMatris(0);
+
+		for (int i = 0; i < aRows; i++) { // aRow
+			for (int j = 0; j < bColumns; j++) { // bColumn
+				for (int k = 0; k < aColumns; k++) { // aColumn
+					newMatrix.getDatas()[i][j] += getDatas()[i][k] * otherMatris.getDatas()[k][j];
+				}
+			}
+		}
+
+		return newMatrix;
+
 	}
 
 	public void dotMultiply(AbstractMatris<Integer> otherMatris) throws Exception {
