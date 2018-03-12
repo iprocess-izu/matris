@@ -15,7 +15,7 @@ public abstract class AbstractMatris<T extends Number> implements IBasicMatrixOp
 	public AbstractMatris(int aRow, int aCol, T defaultValue) {
 		setRowsCount(aRow);
 		setColumnsCount(aCol);
-		this.datas = initMatris(defaultValue);
+		this.setDatas(initMatris(defaultValue));
 	}
 
 	protected abstract T[][] initMatris(T defaultValue);
@@ -38,28 +38,36 @@ public abstract class AbstractMatris<T extends Number> implements IBasicMatrixOp
 
 	protected void checkIndices(int row, int col) {
 		String exceptionMessage = null;
-		
+
 		if (row < 0 || col < 0) {
 			exceptionMessage = "Row and/or Column must be non negative";
 			throw new RuntimeException(exceptionMessage, new IndexOutOfBoundsException(exceptionMessage));
-			
+
 		}
-		
+
 		if (row >= this.rowsCount || col >= this.columnsCount) {
-			exceptionMessage = "[" + row + "," + col + "] is greater than [" + this.rowsCount + "," + this.columnsCount + "]";
+			exceptionMessage = "[" + row + "," + col + "] is greater than [" + this.rowsCount + "," + this.columnsCount
+					+ "]";
 			throw new RuntimeException(exceptionMessage, new IndexOutOfBoundsException(exceptionMessage));
-		}		
+		}
 	}
 
 	public void setValue(int row, int col, T value) {
 		checkIndices(row, col);
-		datas[row][col] = value;
+		getDatas()[row][col] = value;
 	}
 
 	public T getValue(int row, int col) {
 		checkIndices(row, col);
-		return datas[row][col];
+		return getDatas()[row][col];
 	}
 
+	public T[][] getDatas() {
+		return datas;
+	}
+
+	public void setDatas(T[][] datas) {
+		this.datas = datas;
+	}
 
 }

@@ -95,4 +95,20 @@ public class BasicOperationTest extends TestCase {
 		}
 
 	}
+
+	public void testTranspose() {
+		try {
+			matris.sumWithScalar(3);
+			matris.setValue(0, 2, 1);
+			matris.transpose();
+			assertTrue(1 == matris.getValue(2, 0));
+			for (int i = 0; i < matris.getRowsCount(); i++)
+				for (int j = 0; j < matris.getColumnsCount(); j++)
+					System.out.println(matris.getValue(i, j));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }
