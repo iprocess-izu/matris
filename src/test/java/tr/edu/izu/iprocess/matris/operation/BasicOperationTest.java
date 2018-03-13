@@ -1,5 +1,6 @@
 package tr.edu.izu.iprocess.matris.operation;
 
+import tr.edu.izu.iprocess.matris.AbstractMatris;
 import tr.edu.izu.iprocess.matris.impl.IntegerMatris;
 import junit.framework.TestCase;
 
@@ -107,4 +108,18 @@ public class BasicOperationTest extends TestCase {
 		}
 
 	}
+
+	public void testTMultiply() {
+		try {
+			matris.sumWithScalar(3);
+			IntegerMatris integerMatris = new IntegerMatris(3, 1);
+			integerMatris.sumWithScalar(2);
+			AbstractMatris<Integer> multiply = matris.multiply(integerMatris);
+			assertTrue(18 == multiply.getValue(2, 0));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
 }

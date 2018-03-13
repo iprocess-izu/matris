@@ -81,9 +81,7 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 			throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
 		}
 
-		IntegerMatris newMatrix = new IntegerMatris(aRows, bColumns);
-
-		newMatrix.initMatris(0);
+		IntegerMatris newMatrix = new IntegerMatris(aRows, bColumns, 0);
 
 		for (int i = 0; i < aRows; i++) { // aRow
 			for (int j = 0; j < bColumns; j++) { // bColumn
