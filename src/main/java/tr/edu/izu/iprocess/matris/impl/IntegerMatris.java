@@ -1,7 +1,6 @@
 package tr.edu.izu.iprocess.matris.impl;
 
 import tr.edu.izu.iprocess.matris.AbstractMatris;
-import tr.edu.izu.iprocess.matris.exception.NotImplementedMethodException;
 import tr.edu.izu.iprocess.matris.exception.NotInitializedMatrixException;
 
 public class IntegerMatris extends AbstractMatris<Integer> {
@@ -95,8 +94,29 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 
 	}
 
-	public void dotMultiply(AbstractMatris<Integer> otherMatris) throws Exception {
-		throw new NotImplementedMethodException();
+	public AbstractMatris<Integer> dotMultiply(AbstractMatris<Integer> otherMatris) throws Exception {
+		if (getDatas() == null)
+			throw new NotInitializedMatrixException();
+		int aRows = getRowsCount();
+		int aColumns = getColumnsCount();
+		int bRows = otherMatris.getRowsCount();
+		int bColumns = otherMatris.getColumnsCount();
+
+		if (!(aColumns == bColumns && aRows == bRows)) {
+			throw new IllegalArgumentException("Rows and columns did not match");
+		}
+
+		IntegerMatris newMatrix = new IntegerMatris(1, aRows, 0);
+
+		for (int i = 0; i < aRows; i++) { // aRow
+			int tempLineSum = 0;
+			for (int j = 0; j < aColumns; j++) { // aColumn
+				tempLineSum += getDatas()[i][j] * otherMatris.getDatas()[i][j];
+			}
+			newMatrix.getDatas()[0][i] = tempLineSum;
+		}
+
+		return newMatrix;
 	}
 
 }

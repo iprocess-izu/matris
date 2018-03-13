@@ -17,6 +17,6 @@ public interface IBasicMatrixOperation<T extends Number> {
 	
 	public AbstractMatris<T> multiply(AbstractMatris<T> otherMatris) throws Exception;
 	
-	public void dotMultiply(AbstractMatris<T> otherMatris) throws Exception;
+	public AbstractMatris<T> dotMultiply(AbstractMatris<T> otherMatris) throws Exception;
 	
 }

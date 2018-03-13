@@ -109,13 +109,32 @@ public class BasicOperationTest extends TestCase {
 
 	}
 
-	public void testTMultiply() {
+	public void testMultiply() {
 		try {
 			matris.sumWithScalar(3);
 			IntegerMatris integerMatris = new IntegerMatris(3, 1);
 			integerMatris.sumWithScalar(2);
 			AbstractMatris<Integer> multiply = matris.multiply(integerMatris);
 			assertTrue(18 == multiply.getValue(2, 0));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void testDotMultiply() {
+		try {
+			
+			IntegerMatris integerMatris1 = new IntegerMatris(1, 9);
+			integerMatris1.sumWithScalar(3);
+			IntegerMatris integerMatris2 = new IntegerMatris(1, 9);
+			integerMatris2.sumWithScalar(2);
+			AbstractMatris<Integer> multiply = integerMatris1.dotMultiply(integerMatris2);
+			
+			assertTrue(54 == multiply.getValue(0, 0));
+			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
