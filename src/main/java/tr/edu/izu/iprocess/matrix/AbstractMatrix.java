@@ -1,18 +1,18 @@
-package tr.edu.izu.iprocess.matris;
+package tr.edu.izu.iprocess.matrix;
 
-import tr.edu.izu.iprocess.matris.operation.IBasicMatrixOperation;
+import tr.edu.izu.iprocess.matrix.operation.IBasicMatrixOperation;
 
-public abstract class AbstractMatris<T extends Number> implements IBasicMatrixOperation<T> {
+public abstract class AbstractMatrix<T extends Number> implements IBasicMatrixOperation<T> {
 
 	private T[][] datas = null;
 	private int rowsCount = 0;
 	private int columnsCount = 0;
 
-	public AbstractMatris(int aRow, int aCol) {
+	public AbstractMatrix(int aRow, int aCol) {
 		this(aRow, aCol, null);
 	}
 
-	public AbstractMatris(int aRow, int aCol, T defaultValue) {
+	public AbstractMatrix(int aRow, int aCol, T defaultValue) {
 		setRowsCount(aRow);
 		setColumnsCount(aCol);
 		this.setDatas(initMatris(defaultValue));

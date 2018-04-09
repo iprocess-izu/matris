@@ -1,4 +1,4 @@
-package tr.edu.izu.iprocess.matris.exception;
+package tr.edu.izu.iprocess.matrix.exception;
 
 public class NotImplementedMethodException extends Exception {
 

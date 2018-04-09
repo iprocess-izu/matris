@@ -1,4 +1,4 @@
-package tr.edu.izu.iprocess.matris.operation;
+package tr.edu.izu.iprocess.matrix.operation;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
