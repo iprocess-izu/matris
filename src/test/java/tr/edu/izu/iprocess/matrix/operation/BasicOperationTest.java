@@ -1,8 +1,8 @@
 package tr.edu.izu.iprocess.matrix.operation;
 
+import junit.framework.TestCase;
 import tr.edu.izu.iprocess.matrix.AbstractMatrix;
 import tr.edu.izu.iprocess.matrix.impl.IntegerMatrix;
-import junit.framework.TestCase;
 
 public class BasicOperationTest extends TestCase {
 
