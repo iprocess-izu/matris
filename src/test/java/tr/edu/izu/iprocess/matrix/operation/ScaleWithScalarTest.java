@@ -1,16 +1,16 @@
-package tr.edu.izu.iprocess.matris.operation;
+package tr.edu.izu.iprocess.matrix.operation;
 
-import tr.edu.izu.iprocess.matris.impl.IntegerMatris;
 import junit.framework.TestCase;
+import tr.edu.izu.iprocess.matrix.impl.IntegerMatrix;
 
 public class ScaleWithScalarTest extends TestCase {
 
-	private IntegerMatris matris = null;
+	private IntegerMatrix matris = null;
 
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		matris = new IntegerMatris(3, 3);
+		matris = new IntegerMatrix(3, 3);
 	}
 
 	public void testNothing() {

@@ -1,4 +1,4 @@
-package tr.edu.izu.iprocess.matris.io;
+package tr.edu.izu.iprocess.matrix.io;
 
 public interface IReadable {
 

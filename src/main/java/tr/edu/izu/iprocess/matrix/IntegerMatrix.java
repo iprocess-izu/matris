@@ -1,15 +1,15 @@
-package tr.edu.izu.iprocess.matris.impl;
+package tr.edu.izu.iprocess.matrix.impl;
 
-import tr.edu.izu.iprocess.matris.AbstractMatris;
-import tr.edu.izu.iprocess.matris.exception.NotInitializedMatrixException;
+import tr.edu.izu.iprocess.matrix.AbstractMatrix;
+import tr.edu.izu.iprocess.matrix.exception.NotInitializedMatrixException;
 
-public class IntegerMatris extends AbstractMatris<Integer> {
+public class IntegerMatrix extends AbstractMatrix<Integer> {
 
-	public IntegerMatris(int aRow, int aCol) {
+	public IntegerMatrix(int aRow, int aCol) {
 		this(aRow, aCol, 0);
 	}
 
-	public IntegerMatris(int aRow, int aCol, Integer defaultValue) {
+	public IntegerMatrix(int aRow, int aCol, Integer defaultValue) {
 		super(aRow, aCol, defaultValue);
 	}
 
@@ -68,7 +68,7 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 
 	}
 
-	public AbstractMatris<Integer> multiply(AbstractMatris<Integer> otherMatris) throws Exception {
+	public AbstractMatrix<Integer> multiply(AbstractMatrix<Integer> otherMatris) throws Exception {
 		if (getDatas() == null)
 			throw new NotInitializedMatrixException();
 		int aRows = getRowsCount();
@@ -80,7 +80,7 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 			throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
 		}
 
-		IntegerMatris newMatrix = new IntegerMatris(aRows, bColumns, 0);
+		IntegerMatrix newMatrix = new IntegerMatrix(aRows, bColumns, 0);
 
 		for (int i = 0; i < aRows; i++) { // aRow
 			for (int j = 0; j < bColumns; j++) { // bColumn
@@ -94,7 +94,7 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 
 	}
 
-	public AbstractMatris<Integer> dotMultiply(AbstractMatris<Integer> otherMatris) throws Exception {
+	public AbstractMatrix<Integer> dotMultiply(AbstractMatrix<Integer> otherMatris) throws Exception {
 		if (getDatas() == null)
 			throw new NotInitializedMatrixException();
 		int aRows = getRowsCount();
@@ -106,7 +106,7 @@ public class IntegerMatris extends AbstractMatris<Integer> {
 			throw new IllegalArgumentException("Rows and columns did not match");
 		}
 
-		IntegerMatris newMatrix = new IntegerMatris(1, aRows, 0);
+		IntegerMatrix newMatrix = new IntegerMatrix(1, aRows, 0);
 
 		for (int i = 0; i < aRows; i++) { // aRow
 			int tempLineSum = 0;

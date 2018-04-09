@@ -1,6 +1,6 @@
-package tr.edu.izu.iprocess.matris.operation;
+package tr.edu.izu.iprocess.matrix.operation;
 
-import tr.edu.izu.iprocess.matris.AbstractMatris;
+import tr.edu.izu.iprocess.matrix.AbstractMatrix;
 
 
 public interface IBasicMatrixOperation<T extends Number> {
@@ -15,8 +15,8 @@ public interface IBasicMatrixOperation<T extends Number> {
 	
 	public void transpose() throws Exception;
 	
-	public AbstractMatris<T> multiply(AbstractMatris<T> otherMatris) throws Exception;
+	public AbstractMatrix<T> multiply(AbstractMatrix<T> otherMatris) throws Exception;
 	
-	public AbstractMatris<T> dotMultiply(AbstractMatris<T> otherMatris) throws Exception;
+	public AbstractMatrix<T> dotMultiply(AbstractMatrix<T> otherMatris) throws Exception;
 	
 }

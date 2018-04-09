@@ -1,16 +1,16 @@
-package tr.edu.izu.iprocess.matris.io;
+package tr.edu.izu.iprocess.matrix.io;
 
 import junit.framework.TestCase;
-import tr.edu.izu.iprocess.matris.impl.IntegerMatris;
+import tr.edu.izu.iprocess.matrix.impl.IntegerMatrix;
 
 public class IOTest extends TestCase {
 
-	private IntegerMatris matris = null;
+	private IntegerMatrix matris = null;
 
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		matris = new IntegerMatris(3, 3);
+		matris = new IntegerMatrix(3, 3);
 	}
 
 	public void testNothing() {
