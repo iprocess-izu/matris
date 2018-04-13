@@ -67,6 +67,7 @@ public abstract class AbstractMatrix<T extends Number> implements IBasicMatrixOp
 	}
 
 	public void setDatas(T[][] datas) {
+		//TODO columncount ve rowcount güncellenmeli ya da data uygun değil diye hata verilmeli
 		this.datas = datas;
 	}
 
