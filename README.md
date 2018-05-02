@@ -30,7 +30,7 @@ Yazılım      | Versiyon
 * Değişken (yerel, genel), sınıf, metod isimlendirmelerininin net, anlaşılır ve ingilizce olmalıdır.
 * Kodlama düzeni (coding convention) olarak [Google Java Guide](https://google.github.io/styleguide/javaguide.html) esas alınmalıdır.
 * Geliştirme işlemi için yapılacak öneriler ilk maddede belirtildiği gibi [konu (issue)](https://github.com/iprocess-izu/matris/issues) şeklinde yapılmalıdır.
-
+* Geliştirme işlemi yapıldıktan sonra geliştirme yapılan kısımlar açık ve anlaşılır bir biçimde düzenlenmeli, commentlerle desteklenerek başkalarının anlayacağı biçimde oluşturulmalıdır.
 
 
 ## Lisans
