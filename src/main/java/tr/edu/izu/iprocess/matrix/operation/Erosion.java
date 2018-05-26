@@ -1,14 +1,7 @@
 package tr.edu.izu.iprocess.matrix.operation;
 
-import java.awt.image.BufferedImage;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-
-import tr.edu.izu.iprocess.matris.io.impl.MatrixIO;
 import tr.edu.izu.iprocess.matrix.impl.IntegerMatrix;
 import tr.edu.izu.iprocess.matrix.operation.Window.Distance;
 
