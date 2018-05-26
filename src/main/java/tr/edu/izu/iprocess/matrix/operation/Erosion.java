@@ -21,10 +21,8 @@ public class Erosion {
 		
 		IntegerMatrix eroded = new IntegerMatrix(rows, cols); 
 		
-		//kolaylik olsun diye kenar pikselleri katmiyorum
 		for (int j = 1; j < rows-1; j++) {
 			for (int i = 1; i < cols-1; i++) {
-				//square window
 				boolean set = true;
 				
 				for(int k = 0; k < window.getRowsCount(); k++) {
@@ -32,9 +30,16 @@ public class Erosion {
 						
 						if(window.getValue(k, l) != 0) {
 							Distance distance = window.getDistance(k, l);
+
+							int idist = i + distance.getColDistance();
 							
-							if(i + distance.getColDistance() >= source.getColumnsCount() 
-									|| j + distance.getRowDistance() >= source.getRowsCount()) {
+							int jdist = j + distance.getRowDistance();
+							
+							
+							if(idist >= source.getColumnsCount() 
+									|| jdist >= source.getRowsCount()
+									|| jdist < 0 || idist < 0
+									) {
 								set = false;
 							} else {
 								boolean hasValue = source.getValue(j + distance.getRowDistance(), 

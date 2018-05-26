@@ -3,7 +3,6 @@ package tr.edu.izu.iprocess.matrix.operation;
 import java.io.File;
 
 import org.junit.Assert;
-import org.junit.Test;
 
 import junit.framework.TestCase;
 import tr.edu.izu.iprocess.matris.io.impl.MatrixIO;
